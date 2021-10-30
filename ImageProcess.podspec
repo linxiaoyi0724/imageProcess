@@ -25,6 +25,7 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
+                    this is ImageProcess
                    DESC
 
   spec.homepage     = "http://EXAMPLE/ImageProcess"
@@ -38,7 +39,7 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = "MIT (example)"
+  # spec.license      = "MIT (example)"
   # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -64,7 +65,7 @@ Pod::Spec.new do |spec|
   #
 
   # spec.platform     = :ios
-  # spec.platform     = :ios, "5.0"
+  spec.platform     = :ios, "14.0"
 
   #  When using multiple platforms
   # spec.ios.deployment_target = "5.0"
@@ -79,7 +80,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "http://EXAMPLE/ImageProcess.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/linxiaoyi0724/imageProcess.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,11 +91,13 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "Classes", "Classes/**/*.{h,m}"
-  spec.exclude_files = "Classes/Exclude"
+  spec.source_files  = "ImageProcess", "ImageProcess/*.{h,m,cpp}"
+  # spec.exclude_files = "Classes/Exclude"
 
-  # spec.public_header_files = "Classes/**/*.h"
+  spec.public_header_files = "ImageProcess/*.h"
 
+  # pod下载文件下来后，如果不是源文件或者资源文件，会被删除，这个命令保证不被删除
+  # s.preserve_paths = "3rdparty/libMTSkin/iOS/include", "3rdparty/eigen", "mbccore/iOS", "mbccore/mbccore", "3rdparty/libbeautycamdefocus/iOS/include","3rdparty/libmaxflow/iOS/include","3rdparty/libmtalbum/iOS/include","3rdparty/libdepthdefocus/iOS/include","3rdparty/libmdepth/iOS/include", "3rdparty/libnoiseReduction/iOS/include","3rdparty/libmtdis/iOS/include"
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
